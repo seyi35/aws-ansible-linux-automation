@@ -1,0 +1,20 @@
+# Ansible
+*.retry
+
+# SSH keys
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Secrets
+.env
+*.secret
+
+# Terraform later
+.terraform/
+terraform.tfstate*
