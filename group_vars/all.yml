@@ -1,0 +1,9 @@
+---
+timezone: Europe/Berlin
+
+common_packages:
+  - git
+  - curl
+  - vim
+  - unzip
+  - wget
