@@ -10,6 +10,20 @@ The project follows an incremental learning approach, with each sprint introduci
 
 ### Added
 
+- Created reusable AWS variable file (`group_vars/aws.yml`).
+- Provisioned an EC2 Security Group using Ansible.
+- Configured inbound rules for SSH, HTTP, and HTTPS.
+- Applied AWS resource tags for project identification.
+
+### Skills Practiced
+
+- Shared variables
+- AWS Security Groups
+- Infrastructure tagging
+- Idempotent infrastructure provisioning
+
+### Added
+
 * Created `feature/aws-provisioning` development branch.
 * Verified AWS CLI authentication using IAM credentials.
 * Installed and verified the `amazon.aws` Ansible collection.

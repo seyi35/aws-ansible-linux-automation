@@ -1,0 +1,19 @@
+---
+# AWS Configuration
+
+aws_region: eu-central-1
+aws_vpc_id: vpc-0cacdcd8a2c4d1067
+
+# Project
+
+project_name: aws-ansible-linux-automation
+environment: dev
+
+# EC2
+
+key_name: ansible-demo-key
+
+# Security Group
+
+security_group_name: ansible-web-sg
+security_group_description: Security group managed by Ansible
