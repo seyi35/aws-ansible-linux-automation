@@ -8,4 +8,4 @@
 - name: Upgrade installed packages
   ansible.builtin.apt:
     upgrade: dist
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
