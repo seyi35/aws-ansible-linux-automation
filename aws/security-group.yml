@@ -38,8 +38,8 @@
             rule_desc: Allow HTTPS
 
         tags:
-          Project: "{{ project_name }}"
-          Environment: "{{ environment }}"
+          Project: "{{ aws_project_name }}"
+          Environment: "{{ project_environment }}"
           ManagedBy: Ansible
 
       register: security_group

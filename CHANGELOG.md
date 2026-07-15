@@ -10,6 +10,24 @@ The project follows an incremental learning approach, with each sprint introduci
 
 ### Added
 
+- Automated provisioning of EC2 instances with Ansible.
+- Introduced reusable infrastructure variables.
+- Used loops to provision multiple servers from a single playbook.
+- Retrieved the latest Ubuntu 24.04 LTS AMI through AWS Systems Manager Parameter Store.
+- Applied consistent AWS resource tags across all instances.
+
+### Skills Practiced
+
+- EC2 automation
+- Loops
+- Infrastructure as Code
+- Parameter Store
+- AWS tagging
+- Idempotent provisioning
+
+
+### Added
+
 - Created reusable AWS variable file (`group_vars/aws.yml`).
 - Provisioned an EC2 Security Group using Ansible.
 - Configured inbound rules for SSH, HTTP, and HTTPS.

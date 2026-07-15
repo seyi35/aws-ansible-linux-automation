@@ -6,8 +6,9 @@ aws_vpc_id: vpc-0cacdcd8a2c4d1067
 
 # Project
 
-project_name: aws-ansible-linux-automation
-environment: dev
+aws_project_name: aws-ansible-linux-automation
+project_environment: dev
+
 
 # EC2
 
@@ -16,4 +17,14 @@ key_name: ansible-demo-key
 # Security Group
 
 security_group_name: ansible-web-sg
-security_group_description: Security group managed by Ansible
+security_group_description: Security group managed # Networking
+
+subnet_id: subnet-038c0b44f7f56de5a
+
+# Ubuntu 24.04 LTS
+
+ami_id: ami-04bc554a9635a77c8
+
+# Default instance type
+
+instance_type: t2.micro

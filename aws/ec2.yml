@@ -1,0 +1,59 @@
+---
+- name: Provision EC2 Instances
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+
+  vars_files:
+    - ../group_vars/aws.yml
+
+  vars:
+
+    ec2_instances:
+      - name: web01
+      - name: web02
+      - name: db01
+
+  tasks:
+
+    - name: Launch EC2 instances
+      amazon.aws.ec2_instance:
+
+        name: "{{ item.name }}"
+
+        region: "{{ aws_region }}"
+
+        key_name: "{{ key_name }}"
+
+        instance_type: "{{ instance_type }}"
+
+        image_id: "{{ ami_id }}"
+
+        vpc_subnet_id: "{{ subnet_id }}"
+
+        security_group: "{{ security_group_name }}"
+
+        network:
+          assign_public_ip: true
+
+        wait: true
+
+        exact_count: 1
+
+        tags:
+
+          Name: "{{ item.name }}"
+
+          Project: "{{ aws_project_name }}"
+
+          Environment: "{{ project_environment }}"
+
+          ManagedBy: Ansible
+
+      register: ec2_output
+
+      loop: "{{ ec2_instances }}"
+
+
+#Here we have list of servers , loop and then provision everything

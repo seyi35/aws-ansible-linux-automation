@@ -1,0 +1,19 @@
+#get the subnet 
+aws ec2 describe-subnets \
+  --filters "Name=default-for-az,Values=true" \
+  --query "Subnets[0].SubnetId" \
+  --output text \
+  --region eu-central-1 #region
+
+
+#asked SSM for the lastes supported Ubuntu LTS
+aws ssm get-parameters \
+  --names /aws/service/canonical/ubuntu/server/24.04/stable/current/amd64/hvm/ebs-gp3/ami-id \
+  --region eu-central-1
+
+# Describe ec2 instances in table form
+aws ec2 describe-instances \
+    --filters "Name=tag:Project,Values=aws-ansible-linux-automation" \
+    --query "Reservations[*].Instances[*].[Tags[?Key=='Name']|[0].Value,State.Name,PublicIpAddress]" \
+    --output table \
+    --region eu-central-1

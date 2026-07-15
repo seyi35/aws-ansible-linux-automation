@@ -21,3 +21,6 @@ terraform.tfstate*
 
 # Ansible Vault
 *.vault
+
+# Mover
+mover.txt
