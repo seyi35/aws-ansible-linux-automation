@@ -3,8 +3,20 @@
 # tasks file for roles/common
 #
 
-- name: Install common packages
-  package:
-    name: "{{ item }}"
-    state: present
-  loop: "{{ common_packages }}"
+#- name: Install common packages
+#  package:
+#    name: "{{ item }}"
+#    state: present
+#  loop: "{{ common_packages }}"
+
+- import_tasks: update.yml
+
+- import_tasks: packages.yml
+
+- import_tasks: chrony.yml
+
+- import_tasks: users.yml
+
+- import_tasks: ssh.yml
+
+- import_tasks: hostname.yml
