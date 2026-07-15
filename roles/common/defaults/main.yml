@@ -14,3 +14,7 @@ common_packages:
   - net-tools
   - python3-pip
   - chrony
+
+chrony_service: chrony
+
+chrony_package: chrony
