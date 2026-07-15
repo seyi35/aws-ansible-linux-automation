@@ -34,8 +34,8 @@
 
         security_group: "{{ security_group_name }}"
 
-        network:
-          assign_public_ip: true
+        network_interfaces:
+          - assign_public_ip: true
 
         wait: true
 
