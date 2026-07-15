@@ -1,0 +1,24 @@
+---
+plugin: amazon.aws.aws_ec2
+
+regions:
+  - eu-central-1
+
+filters:
+  tag:Project:
+    - aws-ansible-linux-automation
+  instance-state-name:
+    - running
+
+keyed_groups:
+
+  - key: tags.Name
+    prefix: ""
+
+compose:
+
+  ansible_host: public_ip_address
+
+  ansible_user: "'ubuntu'"
+
+  ansible_ssh_private_key_file: "'/home/seyi/.ssh/aws/ansible-demo-key.pem'"

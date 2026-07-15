@@ -17,3 +17,10 @@ aws ec2 describe-instances \
     --query "Reservations[*].Instances[*].[Tags[?Key=='Name']|[0].Value,State.Name,PublicIpAddress]" \
     --output table \
     --region eu-central-1
+
+
+# Inventory graph
+ansible-inventory -i inventory/aws_ec2.yml --graph
+
+# Inventory ping
+ansible all -i inventory/aws_ec2.yml -m ping
