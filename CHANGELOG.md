@@ -6,82 +6,66 @@ The project follows an incremental learning approach, with each sprint introduci
 
 ---
 
-## Sprint 2 – AWS Infrastructure Automation (In Progress)
+## Sprint 1 – Ansible Project Foundation (Completed)
 
 ### Added
 
-- Automated provisioning of EC2 instances with Ansible.
-- Introduced reusable infrastructure variables.
-- Used loops to provision multiple servers from a single playbook.
-- Retrieved the latest Ubuntu 24.04 LTS AMI through AWS Systems Manager Parameter Store.
-- Applied consistent AWS resource tags across all instances.
+- Created project directory structure.
+- Initialized Git repository.
+- Connected project to GitHub.
+- Configured Ansible using `ansible.cfg`.
+- Created static inventory with host groups:
+  - webservers
+  - dbservers
+- Added project `.gitignore`.
+- Established repository structure for:
+  - roles
+  - playbooks
+  - templates
+  - variables
+  - inventories
+  - files
+  - documentation
 
 ### Skills Practiced
 
-- EC2 automation
-- Loops
-- Infrastructure as Code
-- Parameter Store
-- AWS tagging
-- Idempotent provisioning
-
-
-### Added
-
-- Created reusable AWS variable file (`group_vars/aws.yml`).
-- Provisioned an EC2 Security Group using Ansible.
-- Configured inbound rules for SSH, HTTP, and HTTPS.
-- Applied AWS resource tags for project identification.
-
-### Skills Practiced
-
-- Shared variables
-- AWS Security Groups
-- Infrastructure tagging
-- Idempotent infrastructure provisioning
-
-### Added
-
-* Created `feature/aws-provisioning` development branch.
-* Verified AWS CLI authentication using IAM credentials.
-* Installed and verified the `amazon.aws` Ansible collection.
-* Installed and verified the Python `boto3` SDK.
-* Configured AWS default region to `eu-central-1` (Frankfurt).
-* Created an Ansible playbook to provision an AWS EC2 Key Pair.
-* Stored the generated private key securely with restricted file permissions (`0600`).
-* Updated `.gitignore` to prevent accidental commits of sensitive files such as SSH private keys.
-
-### Skills Practiced
-
-* AWS authentication
-* Infrastructure as Code (IaC)
-* Ansible AWS collections
-* Ansible variables
-* `register`
-* Conditional task execution
-* Secure secret handling
-* Git feature branch workflow
+- Git
+- GitHub
+- WSL Linux environment
+- Ansible installation
+- YAML configuration
+- Inventory management
+- Ansible configuration
+- Project organization
 
 ---
 
-## Sprint 1 – Ansible Project Foundation
+## Sprint 2 – AWS Infrastructure Automation (Completed)
 
 ### Added
 
-* Created project directory structure.
-* Initialized Git repository.
-* Connected project to GitHub.
-* Configured Ansible using `ansible.cfg`.
-* Created static inventory with host groups.
-* Added project `.gitignore`.
-* Established repository structure for roles, playbooks, templates, variables, inventories, files, and documentation.
+- Created `feature/aws-provisioning` development branch.
+- Verified AWS CLI authentication using IAM credentials.
+- Verified AWS identity using AWS STS.
+- Installed and verified the `amazon.aws` Ansible collection.
+- Installed and verified Python `boto3` SDK.
+- Configured AWS region:
+  - `eu-central-1` (Frankfurt)
 
-### Skills Practiced
+### AWS Key Pair Automation
 
-* Git
-* GitHub
-* WSL
-* Ansible installation
-* Inventory management
-* Project organization
+- Created Ansible playbook to provision AWS EC2 Key Pair.
+- Automated private key generation.
+- Saved generated private key locally.
+- Secured private key permissions using `0600`.
+- Updated `.gitignore` to prevent committing sensitive files:
+  - `.pem`
+  - secrets
+  - credentials
 
+### AWS Security Group Automation
+
+- Created reusable AWS variable file:
+
+```text
+group_vars/aws.yml
