@@ -1,3 +1,26 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # defaults file for roles/common
+#
+common_packages:
+  - git
+  - curl
+  - wget
+  - vim
+  - tree
+  - unzip
+  - zip
+  - htop
+  - net-tools
+  - python3-pip
+  - chrony
+
+chrony_service: chrony
+
+chrony_package: chrony
+
+devops_user: devops
+
+devops_shell: /bin/bash
+
+ssh_service: ssh

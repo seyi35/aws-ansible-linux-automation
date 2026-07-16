@@ -1,0 +1,45 @@
+---
+- name: Create Security Group
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+
+  vars_files:
+    - ../group_vars/aws.yml
+
+  tasks:
+
+    - name: Create web security group
+      amazon.aws.ec2_security_group:
+        name: "{{ security_group_name }}"
+        description: "{{ security_group_description }}"
+        vpc_id: "{{ aws_vpc_id }}"
+        region: "{{ aws_region }}"
+
+        rules:
+
+          - proto: tcp
+            ports:
+              - 22
+            cidr_ip: 0.0.0.0/0
+            rule_desc: Allow SSH
+
+          - proto: tcp
+            ports:
+              - 80
+            cidr_ip: 0.0.0.0/0
+            rule_desc: Allow HTTP
+
+          - proto: tcp
+            ports:
+              - 443
+            cidr_ip: 0.0.0.0/0
+            rule_desc: Allow HTTPS
+
+        tags:
+          Project: "{{ aws_project_name }}"
+          Environment: "{{ project_environment }}"
+          ManagedBy: Ansible
+
+      register: security_group

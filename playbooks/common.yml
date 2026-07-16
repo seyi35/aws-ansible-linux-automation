@@ -1,0 +1,7 @@
+---
+- name: Configure common Linux baseline
+  hosts: all
+  become: true
+
+  roles:
+    - common

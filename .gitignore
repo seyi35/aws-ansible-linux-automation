@@ -18,3 +18,9 @@ __pycache__/
 # Terraform later
 .terraform/
 terraform.tfstate*
+
+# Ansible Vault
+*.vault
+
+# Mover
+mover.txt
