@@ -69,3 +69,28 @@ The project follows an incremental learning approach, with each sprint introduci
 
 ```text
 group_vars/aws.yml
+
+
+## Sprint 3 – Linux Baseline Automation
+
+### Added
+
+- Implemented Linux server baseline configuration using Ansible roles.
+- Automated system package updates.
+- Installed and configured Chrony time synchronization.
+- Created DevOps administration user with sudo privileges.
+- Implemented SSH hardening using Ansible lineinfile module.
+- Added SSH handler to restart services only when configuration changes occur.
+- Recovered from SSH configuration failure by improving automation approach.
+
+### Skills Practiced
+
+- Ansible roles
+- Linux administration
+- User management
+- SSH security hardening
+- Templates vs lineinfile
+- Handlers
+- Idempotent automation
+- Troubleshooting failed deployments
+- Infrastructure recovery

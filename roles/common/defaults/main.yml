@@ -22,3 +22,5 @@ chrony_package: chrony
 devops_user: devops
 
 devops_shell: /bin/bash
+
+ssh_service: ssh
