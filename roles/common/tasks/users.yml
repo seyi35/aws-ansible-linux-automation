@@ -1,0 +1,9 @@
+---
+- name: Create DevOps user
+  ansible.builtin.user:
+    name: "{{ devops_user }}"
+    shell: "{{ devops_shell }}"
+    groups: sudo
+    append: true
+    create_home: true
+    state: present

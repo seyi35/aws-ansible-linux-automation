@@ -18,3 +18,7 @@ common_packages:
 chrony_service: chrony
 
 chrony_package: chrony
+
+devops_user: devops
+
+devops_shell: /bin/bash
